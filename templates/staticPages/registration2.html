@@ -44,10 +44,11 @@
 												<li><a href="javascrip:void(0);">04</a></li>
 											</ul>
 											<form class="wt-formtheme wt-formregister" action="{% url 'register' %}" method="post">
-												<fieldset class="wt-registerformgroup">
+												{% csrf_token %}
+                                                <fieldset class="wt-registerformgroup">
 													<div class="form-group">
 														<span class="wt-select">
-															<select class="chosen-select locations"  name="locations">
+															<select class="chosen-select locations"  name="location">
 																<option>Uzbekistan</option>
                                                                 <option>United State</option>
 																<option>Canada</option>
