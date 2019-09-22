@@ -226,7 +226,7 @@
 
 												</div>
 											</div>
-											<nav class="wt-pagination" hidden>
+											 <nav class="wt-pagination" {% if page_obj.has_next %} {% else %} hidden {% endif %}>
 												<ul>
 													<li class="wt-prevpage"><a href="javascrip:void(0);"><i class="lnr lnr-chevron-left"></i></a></li>
 													<li><a href="javascrip:void(0);">1</a></li>
