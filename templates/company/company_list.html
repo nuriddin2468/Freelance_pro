@@ -34,11 +34,11 @@
 													<h2>Start Your Search</h2>
 												</div>
 												<div class="wt-widgetcontent">
-													<form class="wt-formtheme wt-formsearch">
+													<form class="wt-formtheme wt-formsearch" method="get" action="{% url 'company-search' %}">
 														<fieldset>
 															<div class="form-group">
-																<input type="text" name="Search" class="form-control" placeholder="Search Company">
-																<a href="javascrip:void(0);" class="wt-searchgbtn"><i class="lnr lnr-magnifier"></i></a>
+																<input type="text" name="q" class="form-control" placeholder="Search Company">
+																<button type="submit" class="wt-searchgbtn"><i class="lnr lnr-magnifier"></i></button>
 															</div>
 														</fieldset>
 													</form>
@@ -161,10 +161,13 @@
 									</div>
 									<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 col-xl-8 float-left">
 										<div class="wt-userlistingholder wt-haslayout">
-											<div class="wt-userlistingtitle">
-												<span>01 - 48 of 57143 results for <em>"Software House"</em></span>
+											<div class="wt-userlistingtitle" {% if not search %} hidden {% endif %}>
+												<span>{% if object_list.count >= 10 %}{{ object_list.count }} - 10 of {{ object_list.count }} results {% else %} {{ object_list.count }} results  {% endif %} for <em>"{{ request.GET.q }}"</em></span>
 											</div>
-											<div class="wt-filterholder">
+                                        <div class="wt-userlistingtitle" {% if search %} hidden {% endif %}>
+												<span>{% if object_list.count >= 10 %}{{ object_list.count }} - 10 of {{ object_list.count }} results {% else %} {{ object_list.count }} results  {% endif %} </span>
+											</div>
+											<div class="wt-filterholder" hidden>
 												<ul class="wt-filtertag">
 													<li class="wt-filtertagclear">
 														<a href="javascrip:void(0)"><i class="fa fa-times"></i> <span>Clear All Filter</span></a>

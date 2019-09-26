@@ -56,7 +56,7 @@
 													</div>
 												</div>
 												<div class="wt-clicksavearea">
-													<span>Job ID: tQu5DW9F2G</span>
+													<span>Company ID: <em style="font-size: 0.9em">{{ object.id }}</em></span>
 													<a href="javascrip:void(0);" class="wt-clicksavebtn"><i class="far fa-heart"></i> Click to Follow</a>
 												</div>
 											</div>
@@ -129,40 +129,40 @@
 												    <p>{{ object.about }}</p>
                                                 </div>
 											</div>
-											<div class="wt-userlistinghold wt-featured wt-userlistingholdvtwo">
+
+                                            {% for job in jobs %}
+
+                                            <div class="wt-userlistinghold wt-featured wt-userlistingholdvtwo">
 											<span class="wt-featuredtag"><img src="{% static 'images/featured.png' %}" alt="img description" data-tipso="Plus Member" class="template-content tipso_style"></span>
 											<div class="wt-userlistingcontent">
 												<div class="wt-contenthead">
 													<div class="wt-title">
-														<a href="usersingle.html"><i class="fa fa-check-circle"></i> Light Bulb Association</a>
-														<h2>I want some customization and installation</h2>
+														<a href="usersingle.html"><i class="fa fa-check-circle"></i> {{ object.name }}</a>
+														<h2>{{ job.title }}</h2>
 													</div>
 													<div class="wt-description">
-														<p>Nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit inati voluptate velit esse cillum dolore eutates fugiat nulla pariatur sunt in culpa asequi officia deserunt mollit anim id est laborum ut perspiciatis...</p>
+														<p>{{ job.text|slice:":255" }} . . .</p>
 													</div>
 													<div class="wt-tag wt-widgettag">
-														<a href="javascript:void(0);">PHP</a>
-														<a href="javascript:void(0);">HTML</a>
-														<a href="javascript:void(0);">JQuery</a>
+                                                        {% for skill in job.skills.all %}
+                                                            <a>{{ skill.name }}</a>
+                                                            {% endfor %}
 													</div>
 												</div>
 												<div class="wt-viewjobholder">
 													<ul>
-														<li><span><i class="fa fa-dollar-sign wt-viewjobdollar"></i>Professional</span></li>
-														<li><span><em><img src="{% static 'images/flag/img-04.png' %}" alt="img description"></em>England</span></li>
-														<li><span><i class="far fa-folder wt-viewjobfolder"></i>Type: Per Hour</span></li>
-														<li><span><i class="far fa-clock wt-viewjobclock"></i>Duration: 03 Months</span></li>
-														<li><span><i class="fa fa-tag wt-viewjobtag"></i>Job ID: gy3yV2Vm5u</span></li>
+														<li><span><em><img src="{% static 'images/flag/img-04.png' %}" alt="img description"></em></span></li>
+                                                        <li><span><i class="fa fa-dollar-sign wt-viewjobdollar"></i>Payment: {{ job.money }} {{ job.currency }}</span></li>
+														<li><span><i class="far fa-folder wt-viewjobfolder"></i>Type: {{ job.type_of_work }}</span></li>
+														<li><span><i class="far fa-clock wt-viewjobclock"></i>Duration: {{job.duration}}</span></li>
+														<li><span><i class="fa fa-tag wt-viewjobtag"></i>Job ID:{{ job.id }}</span></li>
 														<li><a href="javascript:void(0);" class="wt-clicklike wt-clicksave"><i class="fa fa-heart"></i> Save</a></li>
 														<li class="wt-btnarea"><a href="userlisting.html" class="wt-btn">View Job</a></li>
 													</ul>
 												</div>
 											</div>
 											</div>
-
-
-
-
+                                            {% endfor %}
 
 
 											<nav class="wt-pagination" hidden>
