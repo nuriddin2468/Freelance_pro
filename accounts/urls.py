@@ -3,7 +3,9 @@ from accounts import views
 
 
 urlpatterns = [
-    path('login/', views.LoginView.as_view(), name='login'),
-    path('logout/', views.LogoutView, name='logout'),
-    path('registration/', views.RegisterView.as_view(), name='register')
+    path('employers/list/', views.CompanyListView.as_view(), name="employers-list"),
+    path('employer/detail/<str:pk>', views.CompanyDetailView.as_view(), name="employer-detail"),
+    path('employers/search/', views.CompanySearchView.as_view(), name="employers-search"),
+    path('logout/', views.LogoutRedirectView.as_view(), name='logout'),
+    path('login/', views.LoginRedirectView.as_view(), name='login'),
 ]

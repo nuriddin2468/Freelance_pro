@@ -2,23 +2,6 @@
 {% load static %}
 
 {% block content %}
-    <!--Inner Home Banner Start-->
-			<div class="wt-haslayout wt-innerbannerholder">
-				<div class="container">
-					<div class="row justify-content-md-center">
-						<div class="col-xs-12 col-sm-12 col-md-8 push-md-2 col-lg-6 push-lg-3">
-							<div class="wt-innerbannercontent">
-							<div class="wt-title"><h2>Search Result</h2></div>
-							<ol class="wt-breadcrumb">
-								<li><a href="index.html">Home</a></li>
-								<li class="wt-active">Job</li>
-							</ol>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!--Inner Home End-->
 			<!--Main Start-->
 			<main id="wt-main" class="wt-main wt-haslayout wt-innerbgcolor">
 				<div class="wt-haslayout wt-main-section">
@@ -284,7 +267,7 @@
 											<div class="wt-userlistingcontent">
 												<div class="wt-contenthead">
 													<div class="wt-title">
-														<a href="usersingle.html"><i class="fa fa-check-circle"></i> {{ job.job_given.username }}</a>
+														<a href="{% url 'employer-detail' job.job_given.id %}"><i class="fa fa-check-circle"></i> {{ job.job_given }}</a>
 														<h2>{{ job.title }}</h2>
 													</div>
 													<div class="wt-description">
@@ -304,7 +287,7 @@
 														<li><span><i class="far fa-clock wt-viewjobclock"></i>Duration: {{job.duration}}</span></li>
 														<li><span><i class="fa fa-tag wt-viewjobtag"></i>Job ID: {{ job.id }}</span></li>
 														<li><a href="javascript:void(0);" class="wt-clicklike wt-clicksave"><i class="fa fa-heart"></i> Save</a></li>
-														<li class="wt-btnarea"><a href="userlisting.html" class="wt-btn">View Job</a></li>
+														<li class="wt-btnarea"><a href="{% url 'jobs-detail' job.id %}" class="wt-btn">View Job</a></li>
 													</ul>
 												</div>
 											</div>

@@ -21,8 +21,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('page/', include('staticPages.urls')),
-    path('profile/', include('accounts.urls')),
-    path('company/', include('company.urls')),
+    path('accounts/', include('accounts.urls')),
     path('jobs/', include('jobs.urls')),
     path('', RedirectView.as_view(pattern_name='dashboard')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
