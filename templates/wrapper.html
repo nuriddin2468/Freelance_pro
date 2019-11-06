@@ -65,26 +65,12 @@
 													<ul class="sub-menu">
 														<li class="menu-item-has-children page_item_has_children wt-notificationicon"><span class="wt-dropdowarrow"><i class="lnr lnr-chevron-right"></i></span>
 															<a href="javascript:void(0);">Home</a>
-															<ul class="sub-menu">
-																<li><a href="index.html">Home v1</a></li>
-																<li class="wt-newnoti"><a href="indexvtwo.html">Home v2<em>without login</em></a></li>
-															</ul>
 														</li>
 														<li class="menu-item-has-children page_item_has_children"><span class="wt-dropdowarrow"><i class="lnr lnr-chevron-right"></i></span>
-															<a href="javascript:void(0);">Article</a>
-															<ul class="sub-menu">
-																<li><a href="articlelist.html">Article List</a></li>
-																<li><a href="articlegrid.html">Article Grid</a></li>
-																<li><a href="articlesingle.html">Article Single</a></li>
-																<li><a href="articleclassic.html">Article Classic</a></li>
-															</ul>
+															<a href="javascript:void(0);">Articles</a>
 														</li>
 														<li class="menu-item-has-children page_item_has_children"><span class="wt-dropdowarrow"><i class="lnr lnr-chevron-right"></i></span>
 															<a href="javascript:void(0);">Company</a>
-															<ul class="sub-menu">
-																<li><a href="companygrid.html">Company Grid</a></li>
-																<li><a href="companysigle.html">Company Sigle</a></li>
-															</ul>
 														</li>
 														<li>
 															<a href="about.html">About</a>
@@ -104,30 +90,15 @@
 													<a href="howitworks.html">How It Works</a>
 												</li>
 												<li class="menu-item-has-children page_item_has_children">
-													<a href="javascript:void(0);">Browse Jobs</a>
-													<ul class="sub-menu">
-														<li>
-															<a href="joblisting.html">Job Listing</a>
-														</li>
-														<li class="current-menu-item">
-															<a href="jobsingle.html">Job Single</a>
-														</li>
-														<li>
-															<a href="jobproposal.html">Job Proposal</a>
-														</li>
-													</ul>
+													<a href="{% url 'jobs-list' %}">Browse Jobs</a>
 												</li>
 												<li class="menu-item-has-children page_item_has_children">
 													<a href="javascript:void(0);">View Freelancers</a>
-													<ul class="sub-menu">
-														<li>
-															<a href="userlisting.html">User Listing</a>
-														</li>
-														<li class="current-menu-item">
-															<a href="usersingle.html">User Single</a>
-														</li>
-													</ul>
 												</li>
+                                                <li class="nav-item">
+													<a href="{% url 'employers-list' %}">View Employers</a>
+												</li>
+
 											</ul>
 										</div>
 									</nav>
@@ -250,7 +221,7 @@
 															<input type="password" name="password" class="form-control" placeholder="Password">
 														</div>
 														<div class="wt-logininfo">
-															<button href="{% url 'login' %}"  class="wt-btn do-login-button">Login</button>
+															<button type="submit"  class="wt-btn do-login-button">Login</button>
 															<span class="wt-checkbox">
 																<input id="wt-login" type="checkbox" name="rememberme">
 																<label for="wt-login">Keep me logged in</label>
@@ -259,7 +230,7 @@
 													</fieldset>
 													<div class="wt-loginfooterinfo">
 														<a href="javascript:;" class="wt-forgot-password">Forgot password?</a>
-														<a href="{% url 'register' %}">Create account</a>
+														<a href="#">Create account</a>
 													</div>
 												</form>
 											    </form>

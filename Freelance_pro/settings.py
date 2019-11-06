@@ -25,6 +25,7 @@ SECRET_KEY = ')65wg&3j+&9zaa)s2y8)d&3*f1c&0+@-0q=4a3y6b__i5#@flu'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
 ALLOWED_HOSTS = ['damp-wildwood-82425.herokuapp.com', 'localhost', '127.0.0.1']
 
 
@@ -39,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'staticPages',
     'profile',
-    'company'
+    'accounts',
+    'jobs',
 ]
 
 MIDDLEWARE = [
@@ -133,13 +135,19 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, "assets")
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
     'static',
 ]
 
 STATIC_URL = '/static/'
-#STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "/media/"
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+)
