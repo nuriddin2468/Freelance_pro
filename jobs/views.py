@@ -24,7 +24,7 @@ class JobsDetailView(generic.DetailView):
     def get_context_data(self, **kwargs):
         context = super(JobsDetailView, self).get_context_data(**kwargs)
         obj = get_object_or_404(JobsModel, pk=self.kwargs['pk'])
-        obj = EmployerModel.objects.get(user=obj.job_given)
+        obj = EmployerModel.objects.get(user=obj.job_given.user)
         context['company'] = obj
         return context
 

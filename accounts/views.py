@@ -35,7 +35,7 @@ class CompanyDetailView(generic.DetailView):
     def get_context_data(self, **kwargs):
         context = super(CompanyDetailView, self).get_context_data(**kwargs)
         comp = get_object_or_404(EmployerModel, id=self.kwargs['pk'])
-        obj = JobsModel.objects.filter(job_given=comp.user)
+        obj = JobsModel.objects.filter(job_given=comp)
         if not obj:
             context['jobs'] = False
         else:
