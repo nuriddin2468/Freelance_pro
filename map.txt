@@ -8,9 +8,9 @@ Freelancer -> Take a job only
 Job-Seller -> part time job / simple job
 
 
-USER have -> Username , Password , Email
+USER have -> Username , Password , Email , location
 
 
-Company have -> Banner(img - 1110x300) , logo (img - 100x100), Name of CO, About text, Job-id (to follow), verified or not ,website, social-links.
+Company have -> Banner(img - 1110x300) , logo (img - 100x100), Name of CO, About text, Job-id (to follow), verified or not ,website, social-links , type of company .
 Freelancer have -> Profile-Image(225x225) , name, about-self, member from(in the website), socials
 Job-Seller have -> Profile-Image(225x225) , name, about-self, member from(in the website)
