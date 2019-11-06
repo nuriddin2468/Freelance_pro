@@ -25,7 +25,8 @@ SECRET_KEY = ')65wg&3j+&9zaa)s2y8)d&3*f1c&0+@-0q=4a3y6b__i5#@flu'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1']
+
+ALLOWED_HOSTS = ['damp-wildwood-82425.herokuapp.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
