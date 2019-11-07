@@ -1,5 +1,7 @@
 {% extends 'wrapper.html' %}
+{% load qr_code %}
 {% load static %}
+
 
 {% block content %}
 			<!--Main Start-->
@@ -28,7 +30,7 @@
 												</div>
 												<div class="tg-authorcodescan">
 													<figure class="tg-qrcodeimg">
-														<img src="{% static 'images/qrcode.png' %}" alt="img description">
+														{% qr_from_text text=request.get_full_path size='T' %}
 													</figure>
 													<div class="tg-qrcodedetail">
 														<span class="lnr lnr-laptop-phone"></span>
@@ -113,7 +115,7 @@
 											</div>
 
 
-
+                                        {% if jobs %}
                                             {% for job in jobs %}
 
                                             <div class="wt-userlistinghold wt-featured wt-userlistingholdvtwo">
@@ -147,7 +149,7 @@
 											</div>
 											</div>
                                             {% endfor %}
-
+                                        {% endif %}
 
 											<nav class="wt-pagination" hidden>
 												<ul>

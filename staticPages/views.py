@@ -8,3 +8,7 @@ def indexs(request):
     return render(request, 'staticPages/index.html', {
     })
 
+
+def howitworks(request):
+    return render(request, 'staticPages/howitworks.html')
+
